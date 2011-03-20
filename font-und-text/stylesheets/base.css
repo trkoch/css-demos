@@ -1,0 +1,31 @@
+@import url(fonts.css);
+
+body {
+  font-family: Delicious, 'Helvetica', 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+  background-color: #eee;
+  margin: 50px;
+}
+
+a {
+  color: black;
+  text-decoration: underline;
+}
+
+ul {
+  padding-left: 1em;
+}
+
+h1 {
+  font-weight: 800;
+  color: #333;
+}
+
+div#content {
+  margin: auto;
+  padding: 50px;
+  background-color: white;
+  width: 350px;
+  border-radius: 10px;
+}

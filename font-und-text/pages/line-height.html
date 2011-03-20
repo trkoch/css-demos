@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>line-height</title>
+    <link rel="stylesheet" href="../stylesheets/base.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+      body {
+        font-size: 20px;
+      }
+      
+      .small {
+        font-size: 0.5em;
+      }
+      
+      .large {
+        font-size: 1.5em;
+      }
+      
+      .negative-zab {
+        line-height: 0.5em;
+      }
+      
+      .no-zab {
+        line-height: 1;
+      }
+      
+      .more-zab {
+        line-height: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <h1>line-height</h1>
+      
+      <p>
+        Eine ganz normale Zeile<br>
+        Noch eine Zeile.
+      </p>
+      
+      <p class="negative-zab">
+        Eine ganz normale Zeile<br>
+        mit negativem Zeilenabstand.
+      </p>
+      
+      <p class="no-zab">
+        Eine Zeile mit <span class="small">kleiner</span> und <span class="large">großer</span> Schrift.<br>
+        Noch eine Zeile.
+      </p>
+      
+      <p class="more-zab">
+        Noch einmal, mit mehr Zeilenstaband.<br>
+        Eine Zeile mit <span class="small">kleiner</span> und <span class="large">großer</span> Schrift.<br>
+        Noch eine Zeile.
+      </p>
+    </div>
+  </body>
+</html>

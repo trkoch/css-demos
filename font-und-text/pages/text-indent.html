@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>text-indent</title>
+    <link rel="stylesheet" href="../stylesheets/base.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+      p.positive {
+        text-indent: 1em;
+      }
+      
+      p.negative {
+        text-indent: -1em;
+      }
+      
+      p.pixel {
+        text-indent: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <h1>text-indent</h1>
+      <p class="positive">
+        Das ist ein Absatz, dessen erste Zeile eingerückt ist. Die folgenden Zeilen sind nicht eingerückt.
+      </p>
+      <p class="negative">
+        Die Einrückung kann auch negativ sein. Auch hier bleiben folgende Zeilen unbeeinflusst.
+      </p>
+      <p class="pixel">
+        Pixelgenaue Einrückung ist ebenfalls möglich. Der folgenden Zeile ist das egal.
+      </p>
+    </div>
+  </body>
+</html>
