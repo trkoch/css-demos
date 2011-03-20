@@ -16,8 +16,12 @@ body {
 }
 
 h1 {
-  font-weight: bold;
+  font-weight: normal;
   color: #333;
+}
+
+h2 {
+  font-weight: normal;
 }
 
 a {
