@@ -6,8 +6,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <style type="text/css">
       p.demo {
-        width: 200px;
+        width: 300px;
         background-color: #eee;
+        margin: 0;
+      }
+      
+      div {
+        margin-bottom: 1em;
       }
     </style>
   </head>
@@ -32,7 +37,7 @@
     <p class="demo">
       Die Höhe eines Block-Level Elements ist abhängig vom Inhalt.
     </p>
-    <p class="demo" style="height: 100px">
+    <p class="demo" style="height: 80px">
       Natürlich lässt sich die Höhe explizit setzen. Hier ist die Höhe größer
       als der Inhalt.
     </p>
@@ -84,5 +89,36 @@
       <li style="margin-top: 10px; margin-bottom: 15px; background-color: #eee">Zwei</li>
       <li style="margin-top: 10px; margin-bottom: 15px; background-color: #eee">Drei</li>
     </ul>
+    <h2>Negative Abstände</h2>
+    <div>
+      <p class="demo">Absatz ohne Abstand</p>
+      <p class="demo">Absatz ohne Abstand</p>
+    </div>
+    <div>
+      <p class="demo">Absatz ohne Abstand</p>
+      <p class="demo" style="margin-top: -0.5em;">Absatz mit -0.5em Abstand nach oben</p>
+    </div>
+    <div>
+      <p class="demo" style="margin-bottom: 0.5em;">Absatz mit 0.5em Abstand nach unten</p>
+      <p class="demo" style="margin-top: -1em;">Absatz mit -1em Abstand nach oben</p>
+    </div>
+    <div>
+      <div style="margin-bottom: -1em;">
+        <p class="demo">Erster Absatz</p>
+        <p class="demo">Zweiter Absatz</p>
+      </div>
+      <div>
+        <p class="demo">Erster Absatz</p>
+        <p class="demo">Zweiter Absatz</p>
+      </div>
+    </div>
+    <div>
+      <ul style="margin-bottom: -2px;">
+        <li style="margin-bottom: 5px;">Eins</li>
+        <li style="margin-bottom: 5px;">Zwei</li>
+        <li style="margin-bottom: 5px;">Drei</li>
+      </ul>
+      <p style="margin-top: -4px;">Ein Absatz</p>
+    </div>
   </body>
 </html>
