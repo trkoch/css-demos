@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Horizontale Formatierung</title>
+    <link rel="stylesheet" href="../stylesheets/base.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+      div {
+        margin-bottom: 1em;
+      }
+      .container {
+        width: 300px;
+        padding: 5px;
+        border: 1px solid #bbb
+      }
+      .nonreplaced p {
+        background-color: #eee;
+      }
+      .note {
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Horizontale Formatierung</h1>
+    <p>Von Bedeutung für die horizontale Formatierung sind die Eigenschaften:</p>
+    <ul>
+      <li>margin-left <span class="note">(margin = Außenabstand)</span></li>
+      <li>border-left <span class="note">(border = Rand)</span></li>
+      <li>padding-left <span class="note">(padding = Innenabstand)</span></li>
+      <li>width <span class="note">(width = Breite)</span></li>
+      <li>padding-right</li>
+      <li>border-right</li>
+      <li>margin-right</li>
+    </ul>
+    <p>
+      Die Summe der Werte dieser sieben Eigenschaften muss der Breite des <i>containing
+      block</i> entsprechen. Dabei ist unerheblich, ob die im Dokument enthaltenen Stilangaben
+      diese Regel befolgen: Der Browser erzwingt deren Einhaltung.
+    </p>
+    
+    <h2>Nicht ersetzte Elemente</h2>
+    <!-- Containing Block -->
+    <div class="container nonreplaced">
+      <p>
+        Der Absatz ist 300 px breit, obwohl keine Breite festgelegt ist.
+      </p>
+      <p style="width: auto;">
+        Im oberen Fall setzt der Browser implizit <i>width: auto</i>.
+        Erfolgt dies explizit, ist das Resultat identisch.
+      </p>
+      <p style="width: 400px;">
+        Zwar erzwingt der Browser, dass die Gesamt-Breite eines Block-Level-Elements der
+        des <i>containing block</i> entspricht; allerdings nur numerisch. Optisch ist das
+        Kind-Element tatsächlich breiter.
+      </p>
+      <p style="width: 400px; margin-right: -200px;">
+        Möglich machen das negative Außenabstände. Auch wenn kein Außenabstand gesetzt ist,
+        setzt der Browser diesen auf genau den Wert, der zur Einhaltung der Breiten-Regel
+        notwendig ist. Setzt der Autor den Wert explizit, ist das Resultat auch hier
+        identisch. Mit anderen Worten: Negative Außenabstände lassen sich gezielt nutzen
+        um ein Element zu vergrößern.
+      </p>
+      <p style="margin-left: 100px; width: auto; margin-right: 0;">
+        Dieser Absatz ist 200px breit.
+      </p>
+      <p style="margin-left: 100px;">
+        Der Browser setzt nicht explizit definierte Werte (<i>auto</i>) im Sinne 
+        der Einhaltung der Breiten-Regel. Dabei gilt, dass immer zuerst die 
+        Breite „aufgefüllt“ wird.
+      </p>
+      <p style="width: 200px; margin-left: auto; margin-right: auto;">
+        Ist die Breite gesetzt und stehen beide horizontalen Außenabstände 
+        auf <i>auto</i>, verteilt der Browser die übrige Breite gleichmäßig auf die
+        Außenabstände (hier jeweils 50px).
+      </p>
+      <p style="width: 75%; margin-left: auto; margin-right: auto;">
+        Neben Pixel sind auch Prozentangaben zulässig. Sie sind relativ zur
+        Breite des <i>containing block</i>.
+      </p>
+    </div>
+    <h2>Ersetzte Elemente</h2>
+    <div class="container">
+      <p>
+        Im Wesentlichen gelten für ersetzte Elemente, die gleichen Regeln wie
+        für nicht ersetzte Elemente. Mit dem Unterschied, dass ersetzte Elemente
+        eine intrinsische Breite (und Höhe) besitzen.
+      </p>
+      <!--
+        Freddie Mercury in New Haven, CT at a WPLR Show.
+        Some Rights Reserved, Carl Lender and Lošmi
+        http://bit.ly/h4zfU2
+        http://creativecommons.org/licenses/by-sa/3.0/deed.de
+      -->
+      <img src="../images/freddie.jpg" style="display: block; margin-left: auto;
+                margin-right: auto;">
+      <p>
+        Die intrinsische Breite (und Höhe) eines Bildes entspricht der Original-Breite 
+        (und Höhe).
+      </p>
+      <img src="../images/freddie.jpg" style="display: block; 
+                width: 100px; margin-left: auto; margin-right: auto">
+      <p>
+        Die Breite kann überschrieben werden. Dabei passt der Browser die Höhe
+        maßstabsgerecht an.
+      </p>
+      <p>Achtung: Bilder sind standardmäßig <i>display: inline</i>.</p>
+    </div>
+  </body>
+</html>

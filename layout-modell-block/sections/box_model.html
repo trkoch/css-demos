@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Element Box</title>
+    <link rel="stylesheet" href="../stylesheets/base.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+      div {
+        margin-bottom: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Box Model</h1>
+    <p>
+      Die <i>Breite</i> eines Block-Level Elements errechnet sich aus:<br>
+      Außenabstand links + Rand links + Innenabstand links + Breite +
+      Innenabstand rechts + Rand rechts + Außenabstand rechts
+    </p>
+    <p>
+      Die <i>Höhe</i> eines Block-Level Elements errechnet sich aus:<br>
+      Außenabstand oben + Rand oben + Innenabstand oben + Höhe +
+      Innenabstand unten + Rand unten + Außenabstand unten
+    </p>
+    <p>
+      Es gilt: Der Außenabstand kann negativ sein. Alle anderen Eigenschaften
+      nehmen nur positive Werte oder das Schlüsselwort <i>auto</i> an.
+    </p>
+    <img src="../images/box-model.png">
+    <p>
+      Die Grafik veranschaulicht in welcher Reihenfolge Außenabstand, Rand und Innenabstand
+      vom Browser gezeichnet werden.
+    </p>
+
+    <div style="width: 100px; height: 100px; background-color: #00c;"></div>
+    <p>Breite und Höhe = 100px</p>
+
+    <div style="width: 80px; height: 80px; padding: 10px; background-color: #c00; "></div>
+    <p>Breite und Höhe = 80px<br>Innenabstand (rundherum) = 10px</p>
+
+    <div style="width: 60px; height: 60px; padding: 10px; border: 10px solid #00c;
+                background-color: #c00;"></div>
+    <p>Breite und Höhe = 60px<br>Innenabstand (rundherum) = 10px<br>Rand (rundherum)= 10px</p>
+
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vertikale Formatierung</title>
+    <link rel="stylesheet" href="../stylesheets/base.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+      p.demo {
+        width: 200px;
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Vertikale Formatierung</h1>
+    <p>Von Bedeutung für die vertikale Formatierung sind die Eigenschaften:</p>
+    <ul>
+      <li>margin-top</li>
+      <li>border-top</li>
+      <li>padding-top</li>
+      <li>height</li>
+      <li>padding-bottom</li>
+      <li>border-bottom</li>
+      <li>margin-bottom</li>
+    </ul>
+    <p>
+      Ausschließlich height, <i>margin-top</i> sowie <i>margin-bottom</i> akzeptieren das
+      Schlüsselwort <i>auto</i>, alle anderen Eigenschaften erwarten einen expliziten Wert.
+      Im Regelfall entspricht für <i>margin-*</i> <i>auto</i> dem Wert <i>0</i>.
+    </p>
+    <h2>Höhe</h2>
+    <p class="demo">
+      Die Höhe eines Block-Level Elements ist abhängig vom Inhalt.
+    </p>
+    <p class="demo" style="height: 100px">
+      Natürlich lässt sich die Höhe explizit setzen. Hier ist die Höhe größer
+      als der Inhalt.
+    </p>
+    <p class="demo" style="height: 70px; overflow: auto">
+      Hier ist die gesetzte Höhe kleiner als der Inhalt.<br>
+      Wie der Inhalt dargestellt wird,<br>
+      ist von einer weiteren Eigenschaften<br>
+      (<i>overflow</i>) abhängig.
+    </p>
+    <h2>Bleeding</h2>
+    <p>
+      Die automatische Berechnung der Höhe eines Elementes weist einige Überraschungen auf.
+    </p>
+    <div style="background-color: #eee">
+      <p class="demo" style="margin-top: 3em; margin-bottom: 3em">
+        Absatz mit Außenabstand nach oben und unten.
+      </p>
+      <p class="demo" style="margin-top: 3em; margin-bottom: 3em">
+        Ein weiterer Absatz mit Außenabstand nach oben und unten.
+      </p>
+    </div>
+    <p>
+      Das obige Beispiel zeigt, dass die äußeren Abstände bei der automatischen Berechnung
+      der Höhe nicht berücksichtigt werden. Statt dessen fasst der Browser den
+      Abstand mit dem Außenabstand des Elementes zusammen (siehe auch unten). 
+      Dies erklärt den unerwarteten Abstand zwischen Absatz und Beispiel ebenso wie die
+      überraschend kleine Box.
+    </p>
+    <div style="background-color: #eee; border: 1px solid transparent">
+      <p class="demo" style="margin-top: 3em; margin-bottom: 3em">
+        Absatz mit Außenabstand nach oben und unten.
+      </p>
+      <p class="demo" style="margin-top: 3em; margin-bottom: 3em">
+        Ein weiterer Absatz mit Außenabstand nach oben und unten.
+      </p>
+    </div>
+    <p>
+      Die Situation ändert sich, sobald das Element mindestens die Eigenschaft
+      <i>border</i> oder <i>padding</i> gesetzt hat.
+    </p>
+    <h2>Überlappende Abstände</h2>
+    <p>
+      Vertikal angrenzende Abstände überlappen. Man spricht auch von <i>Collapsing</i>.
+      Der tatsächliche Abstand entspricht dem Maximum beider Abstände. So haben die
+      Listeneinträge einen Abstand von 15px – und nicht etwa 25px.
+    </p>
+    <ul>
+      <li style="margin-top: 10px; margin-bottom: 15px; background-color: #eee">Eins</li>
+      <li style="margin-top: 10px; margin-bottom: 15px; background-color: #eee">Zwei</li>
+      <li style="margin-top: 10px; margin-bottom: 15px; background-color: #eee">Drei</li>
+    </ul>
+  </body>
+</html>
