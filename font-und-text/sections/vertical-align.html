@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vertical-align</title>
+    <link rel="stylesheet" href="../../common/base.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+      
+      div#content {
+        width: 450px;
+      }
+      
+      .raise {
+        vertical-align: super;
+      }
+      
+      .lower {
+        vertical-align: sub;
+      }
+      
+      .x-lower {
+        vertical-align: -300%;
+      }
+      
+      .large {
+        font-size: 8em;
+      }
+      
+      .top {
+        vertical-align: top;
+      }
+      
+      .text-top {
+        vertical-align: top;
+      }
+      
+      .baseline {
+        vertical-align: baseline;
+      }
+      
+      .bottom {
+        vertical-align: bottom;
+      }
+      
+      .text-bottom {
+        vertical-align: text-bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>vertical-align</h1>
+    <p>
+      Diese Zeile enthält <span class="raise">hoch</span>, <span class="lower">tief</span> und ganz <span class="x-lower">tief</span> gestellte Wörter.
+    </p>
+    <p>
+      <span class="large">oO</span><span class="top">„top“</span><span class="large">Qq</span>
+    </p>
+    <p>
+      <span class="large">oO</span><span class="text-top">„text-top“</span><span class="large">Qq</span>
+    </p>
+    <p>
+      <span class="large">oO</span><span class="baseline">„baseline“</span><span class="large">Qq</span>
+    </p>
+    <p>
+      <span class="large">oO</span><span class="bottom">„bottom“</span><span class="large">Qq</span>
+    </p>
+    <p>
+      <span class="large">oO</span><span class="text-bottom">„text-bottom“</span><span class="large">Qq</span>
+    </p>
+  </body>
+</html>
