@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inline non-replaced Elemente</title>
+    <link rel="stylesheet" href="../stylesheets/base.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+      .demo {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Inline non-replaced Elemente</h1>
+    <p>
+      Der Inhaltsbereich eines Inline-Elementes (grauer Hintergrund) entspricht in der 
+      Vertikalen der Höhe aller <i>em boxes</i>. Die Höhe des Inhalts ist somit abhängig von der
+      Schriftgröße. Achtung: Die em box kann je nach Schriftart kleiner oder größer als
+      der sichtbare Teil der Schrift sein.
+    </p>
+    <span class="demo">
+      Eine Zeile.
+    </span>
+    <br/>
+    <span class="demo" style="font-size: 23px;">
+      Eine Zeile.
+    </span>
+    <p>
+      Der Inhaltsbereich ist vergleichbar mit dem Inhalt eines Block-Elementes. Entsprechend
+      umschließt der Hintergrund den Innenabstand und der Rand den Hintergrund.
+    </p>
+    <span class="demo" style="padding: 5px; border: 1px solid black;">
+      Eine Zeile.
+    </span>
+    <p>
+      Innenabstand, Rand und Außenabstand von nicht ersetzten Elementen tragen allerdings 
+      nicht zur Höhe des Elementes bei.
+    </p>
+    <span class="demo" style="padding-bottom: 10px; background-color: #dee">Eine Zeile.</span>
+    <br>
+    <span class="demo" style="padding-top: 10px; background-color: #edd">Eine Zeile.</span>
+    <p>
+      Text kann auch außerhalb eines Inline-Elementes stehen. Diesen bezeichnet man als
+      anonymen Text.
+    </p>
+    <p>
+      Ich bin anonym. <span>Ich gebe mich zu erkennen.</span> Ich bin anonym.
+    </p>
+    <p>
+      Ein Inline-Element, das aufgrund seiner Breite automatisch umbrochen wird.
+    </p>
+    <span style="border: 1px solid black">
+      Eine sehr lange Zeile. Eine sehr lange Zeile. Eine sehr lange Zeile. Eine sehr lange Zeile.
+      Eine sehr lange Zeile. Eine sehr lange Zeile. Eine sehr lange Zeile. Eine sehr lange Zeile.
+      Eine sehr lange Zeile. Eine sehr lange Zeile. Eine sehr lange Zeile. Eine sehr lange Zeile.
+    </span>
+    <p>Ein zentriertes Inline-Element.</p>
+    <p style="text-align: center">
+      <span style="background-color: #eee;">
+        Eine sehr lange Zeile. Eine sehr lange Zeile. Eine sehr lange Zeile. Eine sehr lange Zeile.
+        Eine sehr lange Zeile. Eine sehr lange Zeile. Eine sehr lange Zeile.
+      </span>
+    </p>
+    <p>
+      Die Höhe des <i>Inhaltsbereichs</i> ist abhängig von der Schriftgröße. Die Eigenschaft
+      line-height bestimmt die Höhe der <i>inline box</i>. Die <i>line box</i> umschließt alle
+      inline boxes einer Zeile – nicht notwendigerweise alle Inhaltsbereiche.
+      Die Platzierung der inline boxes innerhalb einer Zeile beeinflusst also die Höhe der line box.
+    </p>
+    <p>
+      Den Zusammenhang zwischen Inhaltsbereich, inline box und line box
+      verdeutlichen folgende Beispiele:
+    </p>
+    <p>
+      Im unten stehenden Beispiel haben alle line boxes eine Höhe von 25px. Das Element em (Wichtig!)
+      füllt mit einer Schriftgröße von 25px die gesamte Höhe der line box aus.
+    </p>
+    <p class="demo" style="line-height: 25px;">
+      Hier steht Text.<br>
+      Hier steht Text. <em style="line-height: 25px; font-size: 25px">Wichtig!</em>
+      Hier steht Text.<br>
+      Hier steht Text.
+    </p>
+    <p>
+      Ist die Schriftgröße größer (bzw. höher) als die line box, ist der Zeilenabstand (hier von em)
+      negativ. Die Zeilen rücken näher zusammen. Entscheidend für die Höhe der zweiten Zeile ist
+      der obere Rand der line box von em.
+    </p>
+    <p class="demo" style="line-height: 14px;">
+      Hier steht Text.<br>
+      Hier steht Text. <em style="font-size: 25px">Wichtig!</em> Hier steht Text.<br>
+      Hier steht Text.
+    </p>
+    <p>
+      Dies wird im folgenden Beispiel deutlich. Verschiebt man die line box von em weiter
+      nach oben (mit Hilfe von vertical-align), wächst die zweite Zeile.
+    </p>
+    <p class="demo" style="line-height: 14px;">
+      Hier steht Text.<br>
+      Hier steht Text. <em style="font-size: 25px; vertical-align: 10px;">Wichtig!</em>
+      Hier steht Text.<br>
+      Hier steht Text.
+    </p>
+  </body>
+</html>
