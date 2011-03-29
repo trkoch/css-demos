@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ersetzte Inline-Elemente</title>
+    <link rel="stylesheet" href="../../common/base.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+      .demo {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ersetzte Inline-Elemente</h1>
+    <p>
+      Ein Beispiel für ersetzte Inline-Elemente sind Bilder.
+    </p>
+    <p class="demo">
+      Fließtext (nicht-ersetzt) und Bild (ersetzt)
+      <img src="../images/smiley-small.png"> in einem Absatz.
+    </p>
+    <p>
+      Ersetzte Elemente haben eine intrinsische Höhe und Breite.
+    </p>
+    <p class="demo">
+      <img src="../images/smiley.png" style="width: 20px;">
+      <img src="../images/smiley.png">
+      <img src="../images/smiley.png" style="width: 20px;">
+    </p>
+    <p>
+      Im Unterschied zu nicht-ersetzten Inline-Elementen wirken sich Box-Eigenschaften
+      auf die Gesamthöhe und -Breite aus.
+    </p>
+    <p>
+      <img src="../images/smiley.png"
+           style="padding: 10px; border: 1px solid black; background-color: #eee">
+    </p>
+    <p>
+      Auch ersetzte Inline-Elemente werden von der <i>line box</i> einer Zeile
+      umschlossen.
+    </p>
+    <p class="demo">
+      Hier steht Fließtext<br>
+      verteilt <img src="../images/smiley-small.png"
+                    style="padding-bottom: 10px; border: 1px solid black;"> über<br>
+      mehrere Zeilen.
+    </p>
+    <p>
+       Ersetzte Inline-Elemente richten sich mit ihrem unteren Ende auf der Grundlinie aus.
+    </p>
+    <p class="demo">
+      <span style="font-size: 100px; border: 1px solid black;">Sm</span>
+      <img src="../images/smiley.png"
+           style="border: 1px solid black; background-color: #eee">
+      <span style="font-size: 100px; border: 1px solid black;">ile</span>
+    </p>
+    <p>
+      Weil Box-Eigenschaften zur Gesamthöhe beitragen, beeinflussen Sie auch die
+      Höhe der <i>line box</i>.
+    </p>
+    <p class="demo">
+      <span style="font-size: 100px; border: 1px solid black;">Sm</span>
+      <img src="../images/smiley.png"
+           style="margin-bottom: 40px; border: 1px solid black; background-color: #eee">
+      <span style="font-size: 100px; border: 1px solid black;">ile</span>
+    </p>
+    <p>
+      Mit anderen Worten: Die Schriftgröße beeinflusst die Positionierung des
+      Inline-Elements und damit die Höhe der <i>line box</i>.
+      Diese Eigenschaft kann störend sein:
+    </p>
+    <p class="demo" style="width: 100px; font-size: 30px;">
+      <img src="../images/smiley-small.png">
+    </p>
+    <p>
+       Ein Lösungsansatz ist, Bilder auf
+      <i>display: block</i> zu setzen um damit die geltenden Layout-Regeln zu ändern.
+    </p>
+    <p class="demo" style="width: 100px; font-size: 30px;">
+      <img src="../images/smiley-small.png" style="display: block">
+    </p>
+  </body>
+</html>
