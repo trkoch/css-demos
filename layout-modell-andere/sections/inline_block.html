@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inline-Block</title>
+    <link rel="stylesheet" href="../../common/base.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+      .demo {
+        background-color: #eee;
+      }
+      
+      #nav {
+        padding: 0;
+      }
+      
+      #nav li {
+        display: inline-block;
+        width: 50px;
+        text-align: center;
+        cursor: pointer;
+        background-color: #ddd;
+      }
+      
+      #nav li:hover {
+        background-color: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Inline-Block</h1>
+    <p>
+      Der Layout-Typ <i>inline-block</i> ist hilfreich, wenn kein Zeilenumbruch erwünscht ist,
+      dennoch die Layout-Regeln der Block-Elemente gelten sollen.
+    </p>
+    <p>
+      Block-Elemente erzeugen einen Zeilenumbruch.
+    </p>
+    <div>
+      Eine <div class="demo">fast</div> gewöhnliche Zeile.
+    </div>
+    <p>
+      Inline-Elemente erzeugen zwar keinen Zeilenumbruch, aber Eigenschaften wie
+      <i>width</i> und <i>height</i> wirken sich nicht aus.
+    </p>
+    <div>
+      Eine
+      <div class="demo" style="display: inline; width: 100px">ganz</div>
+      gewöhnliche Zeile.
+    </div>
+    <p>
+      <i>inline-block</i> Elemente sind ein Hybrid aus Block- und Inline-Elementen.
+      Bezogen auf den Inhalt, verhalten sie sich wie Block-Elemente, d.h. es gilt
+      das Box-Modell.
+    </p>
+    <div>
+      Eine
+      <div class="demo" style="display: inline-block; width: 100px">scheinbar</div>
+      gewöhnliche Zeile.
+    </div>
+    <p>
+      Zu umliegenden Elementen dagegen verhalten sich Inline-Block-Elemente
+      wie Inline-Elemente. Das heißt, die line box umschließt diese Elemente.
+      Tatsächlich verhalten sich Inline-Block-Elemente wie ersetzte Inline-Elemente,
+      d.h. die Box-Eigenschaften tragen zur Gesamthöhe der inline box bei.
+    </p>
+    <div>
+      Eine gewöhnliche Zeile<br>
+      Eine
+      <div class="demo" style="display: inline-block; padding: 10px 0;">scheinbar</div>
+      gewöhnliche Zeile.<br>
+      Eine gewöhnliche Zeile
+    </div>
+    <p>
+      Häufige Anwendung finden Inline-Block-Elemente bei horizontalen Navigationsleisten.
+    </p>
+    <ul id="nav">
+      <li>Eins</li>
+      <li>Zwei</li>
+      <li>Drei</li>
+    </ul>
+  </body>
+</html>

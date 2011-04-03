@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Run-In</title>
+    <link rel="stylesheet" href="../../common/base.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+      .demo {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Run-In</h1>
+    <p>
+      Mit dem Layout-Typ <i>run-in</i> lassen sich interessante typografische Effekte
+      ohne Änderung des Markups erzielen. Ausgehend von:
+    </p>
+    <div class="demo">
+      <p>Ein</p>
+      <p>Absatz mit Fließtext, der über<br>mehrere Zeilen läuft.</p>
+    </div>
+    <p>
+      Kann folgender Effekt erzielt werden:
+    </p>
+    <div class="demo">
+      <p style="display: run-in; font-size: 2em; font-variant: small-caps">
+        Ein
+      </p>
+      <p>Absatz mit Fließtext, der über<br>mehrere Zeilen läuft.</p>
+    </div>
+    <p>
+      Alternativ kann der gleiche Effekt durch Umstellung des Markups erzielt werden.
+    </p>
+    <div class="demo">
+      <p>
+        <span style="font-size: 2em; font-variant: small-caps">Ein</span>
+        Absatz mit Fließtext, der über<br>mehrere Zeilen läuft.
+      </p>
+    </div>
+  </body>
+</html>
