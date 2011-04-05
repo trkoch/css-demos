@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Floating</title>
+    <link rel="stylesheet" href="../../common/base.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+      .demo {
+        background-color: #eee;
+      }
+      
+      .box {
+        width: 200px;
+        height: 200px;
+      }
+      
+      .float {
+        width: 80px;
+        height: 80px;
+        background-color: #ddd;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1>Floating</h1>
+    <p>
+      Inhalt umfließt Elemente mit der Eigenschaft <i>float</i> (engl. schweben). Der Wert gibt an, ob der
+      umgebende Inhalt rechts (<i>float: left</i>) oder links (<i>float: right</i>) umfließt.
+    </p>
+    <div class="demo">
+      Cascading Style Sheets (Abk.: CSS, [kæsˌkeɪdɪŋˈstaɪlʃiːts]) ist eine deklarative Stylesheet-Sprache
+      für strukturierte Dokumente. Sie wird vor allem zusammen mit HTML und XML (zum Beispiel bei SVG)
+      eingesetzt. Grundidee beim Entwurf von CSS war es, mittels HTML bzw. XML nur die inhaltliche Untergliederung
+      eines Dokumentes und die Bedeutung seiner Teile zu beschreiben, während mittels CSS weitgehend unabhängig
+      davon die konkrete Darstellung (Farben, Layout, Schrifteigenschaften usw.) hierfür festgelegt wird.
+      
+      <img src="../images/smiley.png" style="float: right; padding: 20px;">
+      
+      Es werden in einem bestimmten Dokument also allenfalls die Untergliederungs-Elemente mit den hierfür
+      zu verwendenden CSS-Klassen ausgezeichnet, während die konkreten Darstellungsattribute in den Definitionen
+      dieser Klassen hinterlegt werden. Diese Klassen können dann zentral definiert werden, vorzugsweise
+      sogar in einem separaten Dokument, was ihre Wiederverwendung für andere Dokumente erleichtert.
+      Daneben enthält CSS ein Vererbungsmodell für Auszeichnungsattribute – deshalb cascading – 
+      das die Anzahl nötiger Definitionen vermindert. CSS ermöglicht allenfalls auch die diskretionäre
+      Auszeichnung von Teilen eines Dokuments.
+      <!-- http://de.wikipedia.org/wiki/Cascading_Style_Sheets, CC BY-SA 3.0 -->
+    </div>
+    <p>
+      Die Außenabstände von umflossenen Elementen werden nicht zusammengefasst (kein Margin-Collapsing).
+    </p>
+    <div class="demo" style="margin: 0 100px;">
+      <img src="../images/smiley.png" style="float: right; margin-right: 100px">
+      <p>
+        Cascading Style Sheets (Abk.: CSS, [kæsˌkeɪdɪŋˈstaɪlʃiːts]) ist eine deklarative Stylesheet-Sprache
+        für strukturierte Dokumente. Sie wird vor allem zusammen mit HTML und XML (zum Beispiel bei SVG)
+        eingesetzt.
+      </p>
+      <p>
+        Grundidee beim Entwurf von CSS war es, mittels HTML bzw. XML nur die inhaltliche Untergliederung
+        eines Dokumentes und die Bedeutung seiner Teile zu beschreiben, während mittels CSS weitgehend unabhängig
+        davon die konkrete Darstellung (Farben, Layout, Schrifteigenschaften usw.) hierfür festgelegt wird.
+      </p>
+      </p>
+    </div>
+    <p>
+      Prinzipiell kann in CSS jedes Element die Eigenschaft <i>float</i> tragen, d.h. umflossen werden –
+      auch Inline-Elemente. Umflossene Elemente generieren immer eine Box, d.h. werden als Block-Elemente
+      interpretiert. Die tatsächliche Breite von nicht ersetzten Elementen ist undefiniert und
+      sollte daher explizit gesetzt werden. Ansonsten wird eine Mindestbreite angenommen.
+    </p>
+    <div class="demo">
+      <p>
+        Sie wird vor allem zusammen mit HTML und XML (zum Beispiel bei SVG) eingesetzt.Grundidee beim Entwurf von
+        CSS war es, mittels HTML bzw. XML nur die inhaltliche Untergliederung eines Dokumentes und die Bedeutung
+        
+        <span style="float: right; padding: 10px; margin: 20px; background-color: #bbb; width: 100px;">
+          CSS ist eine deklarative Stylesheet-Sprache.
+        </span>
+        
+        seiner Teile zu beschreiben, während mittels CSS weitgehend unabhängig davon die konkrete 
+        Darstellung (Farben, Layout, Schrifteigenschaften usw.) hierfür festgelegt wird.
+        
+        Sie wird vor allem zusammen mit HTML und XML (zum Beispiel bei SVG) eingesetzt.Grundidee beim Entwurf von
+        CSS war es, mittels HTML bzw. XML nur die inhaltliche Untergliederung eines Dokumentes und die Bedeutung
+        seiner Teile zu beschreiben, während mittels CSS weitgehend unabhängig davon die konkrete 
+        Darstellung (Farben, Layout, Schrifteigenschaften usw.) hierfür festgelegt wird.
+      </p>
+    </div>
+    <p>
+      Für ein links-umfließendes (rechts umfließendes) Element gilt:
+      
+      <ul>
+        <li>So weit oben wie möglich</li>
+        <li>So weit links (oder rechts) wie möglich</li>
+      </ul>
+      
+      Die wichtigsten Einschränkungen sind:
+    </p>
+    <p>
+      Nicht weiter links (oder rechts) sowie oben als Begrenzungen des <i>containing block</i>.
+    </p>
+    <div class="demo box">
+      <div class="demo float" style="float: left">float</div>
+    </div>
+    <p>
+      Nach unten hin gilt die Einschränkung ausdrücklich nicht!
+    </p>
+    <!-- Explizite Höhe für Container, da die Höhe des floatenden Elements keinen Einfluss nimmt -->
+    <div style="height: 150px">
+      <div class="demo box" style="height: 100px;">
+        <div class="demo float" style="float: left; height: 150px"></div>
+      </div>
+    </div>
+    <p>
+      Das folgende links-umfließende (rechts-umfließende) Element steht rechts (links) vom
+      vorhergehenden links-umfließenden (rechts-umfließenden) Element. Dabei ist die Anordnung
+      im Quelltext entscheidend (<i>source order</i>). Die Einschränkung gilt nicht, wenn das folgende
+      Element in einer neuen Zeile steht.
+    </p>
+    <div class="demo box">
+      <div class="demo float" style="float: left; margin: 0 5px 5px 0">(1)</div>
+      <div class="demo float" style="float: left; margin: 0 5px 5px 0">(2)</div>
+      <div class="demo float" style="float: left; margin: 0 5px 5px 0">(3)</div>
+      <div class="demo float" style="float: left; margin: 0 5px 5px 0">(4)</div>
+    </div>
+    <p>
+      Ein folgendes umfließendes Element kann höchstens auf gleicher Höhe mit dem vorhergehenden
+      umfließenden Element stehen. Gleiches gilt bei vorhergehendem Block-Element.
+    </p>
+    <div class="demo box">
+      Text<br>
+      <div class="demo float" style="float: left; margin: 0 5px 5px 0">(1)</div>
+      <div class="demo float" style="float: left; margin: 0 5px 5px 0">(2)</div>
+    </div>
+    <p>
+      Ähnlich geben vorhergehende Zeilen (<i>line boxes</i>) die höchste mögliche Position vor.
+    </p>
+    <div class="demo box">
+      Text, der über<br>
+      mehrere Zeilen
+      
+      <div class="demo float">float</div>
+      
+      läuft und läuft<br>
+      und läuft…
+    </div>
+  </body>
+</html>
