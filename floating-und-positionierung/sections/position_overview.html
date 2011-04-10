@@ -9,19 +9,19 @@
         position: relative;
         background-color: #eee;
       }
-      
+
       .box {
         width: 400px;
         padding: 1em 0;
       }
-      
+
       .box > .demo {
         width: 70px;
         height: 70px;
         background-color: #bbb;
         border: 1px solid #0c0c0c;
       }
-      
+
       .box > .demo.star {
         background-color: #ebb;
       }
@@ -46,7 +46,7 @@
       <div class="demo star" style="position: static; left: 10px"><i>static</i></div>
       <div class="demo"></div>
     </div>
-    
+
     <p>
       <i>position: relative</i> unterscheidet sich von der statischen Positionierung prinzipiell
       nur darin, dass der Browser Offset-Eigenschaften anwendet. Sie sind relativ zu der ursprünglichen
@@ -58,7 +58,7 @@
       <div class="demo star" style="position: relative; top: -1em; left: 35px"><i>relative</i></div>
       <div class="demo"></div>
     </div>
-    
+
     <p>
       <i>position: absolute</i> nimmt Elemente aus dem normal flow, d.h. Elemente mit absoluter
       Positionierung verdrängen nicht. Ihre Position ist relativ zum nächstliegenden Element, das
@@ -76,7 +76,7 @@
       <div class="demo"></div>
     </div>
 
-    <div class="demo box fixed" 
+    <div class="demo box fixed"
         style="position: fixed; right: 10px; top: 140px; width: 150px;
                background-color: transparent">
       <p>
