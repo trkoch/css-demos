@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Positionierung</title>
+    <link rel="stylesheet" href="../../common/base.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+      .demo {
+        position: relative;
+        background-color: #eee;
+      }
+      
+      .box {
+        width: 400px;
+        padding: 1em 0;
+      }
+      
+      .box > .demo {
+        width: 70px;
+        height: 70px;
+        background-color: #bbb;
+        border: 1px solid #0c0c0c;
+      }
+      
+      .box > .demo.star {
+        background-color: #ebb;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Positionierung</h1>
+    <p>
+      <i>position: static</i> ist die Standardeinstellung in CSS. Elemente fügen sich dort ein,
+      wo Freiraum vorhanden ist. Sie verdrängen den Platz, den Sie einnnehmen. Dieses Verhalten bezeichnet
+      man als <i>normal flow</i>. Der Browser ignoriert Offset-Eigenschaften statischer Elemente.
+    </p>
+    <p>
+      Mit anderen Worten: Die Position eines statischen Elements hängt ab von:
+      <ul>
+        <li>den Eigenschaften des Elements selbst</li>
+        <li>den Eigenschaften der Elemente, die im Markup vor dem betreffenden Element stehen</li>
+      </ul>
+    </p>
+    <div class="demo box static">
+      <div class="demo"></div>
+      <div class="demo star" style="position: static; left: 10px"><i>static</i></div>
+      <div class="demo"></div>
+    </div>
+    
+    <p>
+      <i>position: relative</i> unterscheidet sich von der statischen Positionierung prinzipiell
+      nur darin, dass der Browser Offset-Eigenschaften anwendet. Sie sind relativ zu der ursprünglichen
+      Position (im normal flow). Die Verdrängung verhält sich, als wäre das Element nicht verschoben
+      worden.
+    </p>
+    <div class="demo box relative">
+      <div class="demo"></div>
+      <div class="demo star" style="position: relative; top: -1em; left: 35px"><i>relative</i></div>
+      <div class="demo"></div>
+    </div>
+    
+    <p>
+      <i>position: absolute</i> nimmt Elemente aus dem normal flow, d.h. Elemente mit absoluter
+      Positionierung verdrängen nicht. Ihre Position ist relativ zum nächstliegenden Element, das
+      eine nicht statische Positionierung besitzt, genauer der Kante des Innenabstandes.
+      Existiert ein solches Element nicht, gilt die Dokumentwurzel als Bezugspunkt.
+    </p>
+    <p>
+      Absolut positionierte Elemente nehmen ihre Position vollkommen unabhägig von übrigen Elementen
+      ein, auch anderen absolut positionierten. Sie können daher schnell übrige Elemente überlagern.
+      Die Anordnung in Z-Richtung (Tiefe) bestimmt die Eigenschaft <i>z-index</i>.
+    </p>
+    <div class="demo box absolute">
+      <div class="demo"></div>
+      <div class="demo star" style="position: absolute; top: 0; right: 0"><i>absolute</i></div>
+      <div class="demo"></div>
+    </div>
+
+    <div class="demo box fixed" 
+        style="position: fixed; right: 10px; top: 140px; width: 150px;
+               background-color: transparent">
+      <p>
+        <i>position: fixed</i> Elemente verhalten sich wie absolut positionierte, ihr
+        Bezugspunkt ist aber stets das Browserfenster (der sogenannte <i>view port</i>).
+      </p>
+      <div class="demo star" style="right: 0; top: 10px"></div>
+    </div>
+
+  </body>
+</html>

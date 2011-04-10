@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Absolute Positionierung</title>
+    <link rel="stylesheet" href="../../common/base.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+      .demo {
+        background-color: #eee;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+      }
+
+      .box.demo {
+        position: relative;
+      }
+
+      .demo > div {
+        width: 50px;
+        height: 50px;
+        background-color: #bbb;
+        border: 1px solid #0c0c0c;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Absolute Positionierung</h1>
+    <p>
+      Die Platzierung und Größenermittlung absolut positionierter Elemente hat einige Besonderheiten
+      vorzuweisen.
+    </p>
+    <p>
+      Ist eine Offset-Eigenschaft nicht angegeben, wird <i>auto</i> angenommen. Auto ist
+      nicht gleich zu setzen mit 0, sondern steht für eben den Offset, den das Element im
+      normal flow besitzen würde.
+    </p>
+    <div class="demo box" style="height: 104px">
+      <div></div>
+      <div style="position: absolute; left: 20px"></div>
+    </div>
+    <p>
+      Das Standardverhalten von absolute positionierten Elementen ist
+      jene Größe einzunehmen, die notwendig ist um den Inhalt zu umschließen (<i>shrink/grow to fit</i>).
+    </p>
+    <div class="demo box" style="height: 59px; width: auto">
+      <div style="width: auto; height: auto; padding: 2px; position: absolute">Affe</div>
+      <div style="width: auto; height: auto; padding: 2px; position: absolute; top: 34px;">Dampfschiffahrtsanlegestelle</div>
+    </div>
+    <p>
+      Sowohl Offset-Eigenschaften als auch die üblichen width und height
+      Eigenschaften nehmen Einfluß auf die Größeneinstellung.
+    </p>
+    <p>
+      Explizite Angabe der Breite (Eigenschaft <i>width</i>).
+    </p>
+    <div class="demo box">
+      <div style="position: absolute; right: 0; width: 50px"></div>
+    </div>
+    <p>
+      Angabe des linken und rechten Rands (Offset-Eigenschaften). Das Element wird “aufgespannt”.
+    </p>
+    <div class="demo box">
+      <div style="position: absolute; left: 50px; right: 0;"></div>
+    </div>
+    <p>
+      Ähnlich der Breiten-Regel von Block-Elementen gilt, dass die summierten Werte der Eigenschaften
+      für Außenabstand, Innenabstand und Breite der inneren Breite des containing blocks entsprechen
+      müssen.
+    </p>
+    <p>
+      Ist der Außenabstand automatisch, nimmt dieser den übrigen Platz ein. Sind zwei Außenabstände in der
+      horizontalen oder vertikalen Achse automatisch, wird die verfügbare Breite gleichmäßig verteilt.
+      Dieser Zusammenhang erlaubt die horizontale und vertikale Zentrierung absolut
+      positionierter Elemente innerhalb ihres containing blocks.
+    </p>
+    <div class="demo box" style="height: 104px; margin-bottom: 1em">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+                  margin: auto;"></div>
+    </div>
+    <p>
+      Wenn alle Offset-, Größen- und Außenabstand-Eigenschaften gesetzt sind, liegt ein
+      Konflikt vor. Für Sprachen mit Links-nach-rechts Leserichtung überschreibt der Browser
+      den Wert für den rechten Außenabstand mit dem Wert, der zur Einhaltung der Regel gesetzt
+      sein muss.
+    </p>
+    <p>
+      Zu beachten ist, dass die Breiten- und Höhe-Angaben immer die höchste Priorität besitzt.
+    </p>
+    <div class="demo box" style="height: 52px;">
+      <div style="position: absolute; top: 0; left: 10px; right: 0; bottom: 0;
+                  width: 20px; margin: 0 0 0 0;">
+      </div>
+      <!--
+        Gleichbedeutend mit:
+
+        <div style="position: absolute; top: 0; left: 10px; right: 0; bottom: 0;
+                  width: 20px; margin: 0 70px 0 0;">
+        </div>
+      -->
+    </div>
+  </body>
+</html>
