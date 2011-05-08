@@ -30,7 +30,7 @@
   <body>
     <h1>Positionierung</h1>
     <p>
-      <i>position: static</i> ist die Standardeinstellung in CSS. Elemente fügen sich dort ein,
+      <code>position: static</code> ist die Standardeinstellung in CSS. Elemente fügen sich dort ein,
       wo Freiraum vorhanden ist. Sie verdrängen den Platz, den Sie einnnehmen. Dieses Verhalten bezeichnet
       man als <i>normal flow</i>. Der Browser ignoriert Offset-Eigenschaften statischer Elemente.
     </p>
@@ -48,7 +48,7 @@
     </div>
 
     <p>
-      <i>position: relative</i> unterscheidet sich von der statischen Positionierung prinzipiell
+      <code>position: relative</code> unterscheidet sich von der statischen Positionierung prinzipiell
       nur darin, dass der Browser Offset-Eigenschaften anwendet. Sie sind relativ zu der ursprünglichen
       Position (im normal flow). Die Verdrängung verhält sich, als wäre das Element nicht verschoben
       worden.
@@ -60,7 +60,7 @@
     </div>
 
     <p>
-      <i>position: absolute</i> nimmt Elemente aus dem normal flow, d.h. Elemente mit absoluter
+      <code>position: absolute</code> nimmt Elemente aus dem normal flow, d.h. Elemente mit absoluter
       Positionierung verdrängen nicht. Ihre Position ist relativ zum nächstliegenden Element, das
       eine nicht statische Positionierung besitzt, genauer der Kante des Innenabstandes.
       Existiert ein solches Element nicht, gilt die Dokumentwurzel als Bezugspunkt.
@@ -80,7 +80,7 @@
         style="position: fixed; right: 10px; top: 140px; width: 150px;
                background-color: transparent">
       <p>
-        <i>position: fixed</i> Elemente verhalten sich wie absolut positionierte, ihr
+        <code>position: fixed</code> Elemente verhalten sich wie absolut positionierte, ihr
         Bezugspunkt ist aber stets das Browserfenster (der sogenannte <i>view port</i>).
       </p>
       <div class="demo star" style="right: 0; top: 10px"></div>
