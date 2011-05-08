@@ -14,7 +14,7 @@
         height: 200px;
       }
 
-      .float {
+      .small-box {
         width: 80px;
         height: 80px;
         background-color: #ddd;
@@ -101,7 +101,7 @@
       Nicht weiter links (oder rechts) sowie oben als Begrenzungen des <i>containing block</i>.
     </p>
     <div class="demo box">
-      <div class="demo float" style="float: left">float</div>
+      <div class="demo small-box" style="float: left">float</div>
     </div>
     <p>
       Nach unten hin gilt die Einschränkung ausdrücklich nicht!
@@ -109,7 +109,7 @@
     <!-- Explizite Höhe für Container, da die Höhe des floatenden Elements keinen Einfluss nimmt -->
     <div style="height: 150px">
       <div class="demo box" style="height: 100px;">
-        <div class="demo float" style="float: left; height: 150px"></div>
+        <div class="demo small-box" style="float: left; height: 150px"></div>
       </div>
     </div>
     <p>
@@ -119,10 +119,10 @@
       Element in einer neuen Zeile steht.
     </p>
     <div class="demo box">
-      <div class="demo float" style="float: left; margin: 0 5px 5px 0">(1)</div>
-      <div class="demo float" style="float: left; margin: 0 5px 5px 0">(2)</div>
-      <div class="demo float" style="float: left; margin: 0 5px 5px 0">(3)</div>
-      <div class="demo float" style="float: left; margin: 0 5px 5px 0">(4)</div>
+      <div class="demo small-box" style="float: left; margin: 0 5px 5px 0">(1)</div>
+      <div class="demo small-box" style="float: left; margin: 0 5px 5px 0">(2)</div>
+      <div class="demo small-box" style="float: left; margin: 0 5px 5px 0">(3)</div>
+      <div class="demo small-box" style="float: left; margin: 0 5px 5px 0">(4)</div>
     </div>
     <p>
       Ein folgendes umfließendes Element kann höchstens auf gleicher Höhe mit dem vorhergehenden
@@ -130,8 +130,8 @@
     </p>
     <div class="demo box">
       Text<br>
-      <div class="demo float" style="float: left; margin: 0 5px 5px 0">(1)</div>
-      <div class="demo float" style="float: left; margin: 0 5px 5px 0">(2)</div>
+      <div class="demo small-box" style="float: left; margin: 0 5px 5px 0">(1)</div>
+      <div class="demo small-box" style="float: left; margin: 0 5px 5px 0">(2)</div>
     </div>
     <p>
       Ähnlich geben vorhergehende Zeilen (<i>line boxes</i>) die höchste mögliche Position vor.
@@ -140,7 +140,7 @@
       Text, der über<br>
       mehrere Zeilen
 
-      <div class="demo float">float</div>
+      <div class="demo small-box">float</div>
 
       läuft und läuft<br>
       und läuft…
