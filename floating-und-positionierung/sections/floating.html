@@ -20,6 +20,14 @@
         background-color: #ddd;
       }
 
+      .clearfix:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        clear: both;
+      }
+
     </style>
   </head>
   <body>
@@ -140,10 +148,52 @@
       Text, der über<br>
       mehrere Zeilen
 
-      <div class="demo small-box" style="float: left">float</div>
+      <div class="demo small-box" style="float: left">Float</div>
 
       läuft und läuft<br>
       und läuft…
+    </div>
+    <p>
+      Floating nimmt Elemente aus dem Dokumentfluss. Umfließende Elemente tragen daher nicht ohne Weiteres
+      zur Höhe des Eltern-Elements bei. Problematisch ist dies insbesondere, wenn das Eltern-Element eine
+      automatische Höhe bestitzt. Um dennoch umfließende Elemente zu umschließen (engl.<i>float containment</i>
+      gibt es eine Reihe von Tricks.
+    </p>
+    <p>
+      Die Eigenschaft <i>clear</i> mit dem Wert <i>both</i> zwingt ein Element auf eine neue Zeile.
+      Platziert man ein Element mit dieser Eigenschaft an das Ende des Containers, so bestimmt dieses
+      (nicht umfließende) Element das untere Ende.
+    </p>
+    <div class="demo box" style="height: auto">
+      <div class="demo small-box" style="float: left">Float #1</div>
+      <div class="demo small-box" style="float: left">Float #3</div>
+      <div class="demo small-box" style="float: left">Float #3</div>
+
+      <!-- Ist folgendes Element auskommentiert, beträgt die Höhe des Eltern-Elements 0px -->
+      <div style="clear: both"></div>
+    </div>
+    <p>
+      Der Nachteil des obigen Tricks ist, dass ein zusätzliches Element im Markup benötigt wird. Durch
+      intelligenten Einsatz von Pseudo-Selektoren und Verwendung der Eigenschaft <i>content</i> lässt sich
+      das notwendige Element dynamisch erzeugen.
+    </p>
+    <!-- Siehe .clearfix -->
+    <div class="demo box clearfix" style="height: auto">
+      <div class="demo small-box" style="float: left">Float #1</div>
+      <div class="demo small-box" style="float: left">Float #3</div>
+      <div class="demo small-box" style="float: left">Float #3</div>
+    </div>
+    <p>
+      Die wohl einfachste Lösung ist für das Eltern-Element den <i>block formatting context</i> zu erzwingen.
+      Element-Boxes, welche in diesem Kontext stehen, zeichnet der Browser Box für Box vertikal hintereinander
+      (siehe <a href="http://www.w3.org/TR/CSS21/visuren.html#block-formatting">CSS: Block-Formatting</a>).
+      Ein besonders empfehlenswerter Weg den Kontext zu erzwingen ist <code>overflow: hidden</code> –
+      empfehlenswert deshalb, weil die Eigenschaft keine gravierenden Seiteneffekte hat.
+    </p>
+    <div class="demo box" style="height: auto; overflow: hidden">
+      <div class="demo small-box" style="float: left">Float #1</div>
+      <div class="demo small-box" style="float: left">Float #3</div>
+      <div class="demo small-box" style="float: left">Float #3</div>
     </div>
   </body>
 </html>
