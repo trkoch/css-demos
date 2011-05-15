@@ -27,7 +27,7 @@
     </span>
     <p>
       Der Inhaltsbereich ist vergleichbar mit dem Inhalt eines Block-Elementes. Entsprechend
-      umschließt der Hintergrund den Innenabstand und der Rand den Hintergrund.
+      gehört der Innenabstand zum Hintergrund. Der Rand umschließt den Hintergrund.
     </p>
     <span class="demo" style="padding: 5px; border: 1px solid black;">
       Eine Zeile.
@@ -63,7 +63,7 @@
     </p>
     <p>
       Die Höhe des <i>Inhaltsbereichs</i> ist abhängig von der Schriftgröße. Die Eigenschaft
-      line-height bestimmt die Höhe der <i>inline box</i>. Die <i>line box</i> umschließt alle
+      <code>line-height</code> bestimmt die Höhe der <i>inline box</i>. Die <i>line box</i> umschließt alle
       inline boxes einer Zeile – nicht notwendigerweise alle Inhaltsbereiche.
       Die Platzierung der inline boxes innerhalb einer Zeile beeinflusst also die Höhe der line box.
     </p>
@@ -83,8 +83,7 @@
     </p>
     <p>
       Ist die Schriftgröße größer (bzw. höher) als die line box, ist der Zeilenabstand (hier von em)
-      negativ. Die Zeilen rücken näher zusammen. Entscheidend für die Höhe der zweiten Zeile ist
-      der obere Rand der line box von em.
+      negativ. Die Zeilen rücken näher zusammen.
     </p>
     <p class="demo" style="line-height: 14px;">
       Hier steht Text.<br>
@@ -92,8 +91,9 @@
       Hier steht Text.
     </p>
     <p>
-      Dies wird im folgenden Beispiel deutlich. Verschiebt man die line box von em weiter
-      nach oben (mit Hilfe von vertical-align), wächst die zweite Zeile.
+      Entscheidend für die Höhe der zweiten Zeile ist der obere Rand der line box von em.
+      Verschiebt man die line box von em weiter nach oben (mit Hilfe von vertical-align),
+      wächst die zweite Zeile.
     </p>
     <p class="demo" style="line-height: 14px;">
       Hier steht Text.<br>
